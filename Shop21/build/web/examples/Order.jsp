@@ -103,7 +103,7 @@
                                                         <td><%=e.getStartDate()%></td>
                                                         <td><%=e.getStatus()%></td>
                                                         <td style="text-align: center">
-                                                            <button type="button" rel="tooltip" class="btn btn-primary btn-round">
+                                                            <button id ="btnxemct"type="button" rel="tooltip" class="btn btn-primary btn-round">
                                                                 <a href="Detail?did=<%=e.getId()%>">
                                                                     XEM CHI TIẾT
                                                                 </a>

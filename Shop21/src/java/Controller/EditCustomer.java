@@ -40,7 +40,7 @@ public class EditCustomer extends HttpServlet {
         String address = request.getParameter("addressedit");
         String certificate = request.getParameter("certificateedit");
         CustomerDAO db = new CustomerDAO();
-        db.updateCustomer(id,name, phone, address, certificate);
+        db.updateCustomer(id, name, phone, address, certificate);
         response.sendRedirect("Customer");
     }
 

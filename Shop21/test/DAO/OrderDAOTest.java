@@ -19,10 +19,10 @@ import static org.junit.Assert.*;
  * @author Snowyy
  */
 public class OrderDAOTest {
-    
+
     public OrderDAOTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
         Rollback rb = new Rollback();
@@ -57,8 +57,9 @@ public class OrderDAOTest {
         String result = instance.createOrder(id_customer, totalprice, startDate, status);
         int j = instance.getAllOrder().size();
         assertEquals(expResult, result);
-        assertNotEquals(i,j);
+        assertNotEquals(i, j);
     }
+
     @Test
     public void testCreateOrderNullIDCustomer() {
         System.out.println("createOrder");
@@ -72,8 +73,9 @@ public class OrderDAOTest {
         String result = instance.createOrder(id_customer, totalprice, startDate, status);
         int j = instance.getAllOrder().size();
         assertEquals(expResult, result);
-        assertEquals(i,j);
+        assertEquals(i, j);
     }
+
     @Test
     public void testCreateOrderNullTotalprice() {
         System.out.println("createOrder");
@@ -87,8 +89,9 @@ public class OrderDAOTest {
         String result = instance.createOrder(id_customer, totalprice, startDate, status);
         int j = instance.getAllOrder().size();
         assertEquals(expResult, result);
-        assertEquals(i,j);
+        assertEquals(i, j);
     }
+
     @Test
     public void testCreateOrderNullStartDate() {
         System.out.println("createOrder");
@@ -102,8 +105,9 @@ public class OrderDAOTest {
         String result = instance.createOrder(id_customer, totalprice, startDate, status);
         int j = instance.getAllOrder().size();
         assertEquals(expResult, result);
-        assertEquals(i,j);
+        assertEquals(i, j);
     }
+
     @Test
     public void testCreateOrderNullStatus() {
         System.out.println("createOrder");
@@ -117,7 +121,7 @@ public class OrderDAOTest {
         String result = instance.createOrder(id_customer, totalprice, startDate, status);
         int j = instance.getAllOrder().size();
         assertEquals(expResult, result);
-        assertEquals(i,j);
+        assertEquals(i, j);
     }
 
     @Test
@@ -133,6 +137,7 @@ public class OrderDAOTest {
         String result = instance.updateorder(id, id_customer, totalprice, startDate, status);
         assertEquals(expResult, result);
     }
+
     @Test
     public void testUpdateorderNullID() {
         OrderDAO instance = new OrderDAO();
@@ -147,8 +152,9 @@ public class OrderDAOTest {
         String result = instance.updateorder(id, id_customer, totalprice, startDate, status);
         List<Order> ord1 = instance.findOrderDetailbyIDCustomer("1");
         assertEquals(expResult, result);
-        assertEquals(ord.size(),ord1.size());
+        assertEquals(ord.size(), ord1.size());
     }
+
     @Test
     public void testUpdateorderNullIDCustomer() {
         System.out.println("updateorder");
@@ -162,6 +168,7 @@ public class OrderDAOTest {
         String result = instance.updateorder(id, id_customer, totalprice, startDate, status);
         assertEquals(expResult, result);
     }
+
     @Test
     public void testUpdateorderNullTotalprice() {
         System.out.println("updateorder");
@@ -176,8 +183,9 @@ public class OrderDAOTest {
         String result = instance.updateorder(id, id_customer, totalprice, startDate, status);
         Order ord1 = instance.findOrderbyID("1");
         assertEquals(expResult, result);
-        assertEquals(ord,ord1);
+        assertEquals(ord, ord1);
     }
+
     @Test
     public void testUpdateorderNullStartDate() {
         System.out.println("updateorder");
@@ -192,8 +200,9 @@ public class OrderDAOTest {
         String result = instance.updateorder(id, id_customer, totalprice, startDate, status);
         Order ord1 = instance.findOrderbyID("1");
         assertEquals(expResult, result);
-        assertEquals(ord,ord1);
+        assertEquals(ord, ord1);
     }
+
     @Test
     public void testUpdateorderNullStatus() {
         System.out.println("updateorder");
@@ -208,9 +217,8 @@ public class OrderDAOTest {
         String result = instance.updateorder(id, id_customer, totalprice, startDate, status);
         Order ord1 = instance.findOrderbyID("1");
         assertEquals(expResult, result);
-        assertEquals(ord,ord1);
+        assertEquals(ord, ord1);
     }
-    
 
     @Test
     public void testDeleteOrderSuccess() {
@@ -222,8 +230,9 @@ public class OrderDAOTest {
         String result = instance.deleteOrder(id);
         int j = instance.getAllOrder().size();
         assertEquals(expResult, result);
-        assertNotEquals(i,j);
+        assertNotEquals(i, j);
     }
+
     @Test
     public void testDeleteOrderFailed() {
         System.out.println("deleteOrder");
@@ -234,7 +243,7 @@ public class OrderDAOTest {
         String result = instance.deleteOrder(id);
         int j = instance.getAllOrder().size();
         assertEquals(expResult, result);
-        assertEquals(i,j);
+        assertEquals(i, j);
     }
 
     @Test
@@ -242,10 +251,11 @@ public class OrderDAOTest {
         System.out.println("findOrderbyID");
         String id = "1";
         OrderDAO instance = new OrderDAO();
-        Order expResult = new Order("1","1","8000000","2021-11-30","chua giao");
+        Order expResult = new Order("1", "1", "8000000.0", "2021-11-30", "chua giao");
         Order result = instance.findOrderbyID(id);
         assertEquals(expResult, result);
     }
+
     @Test
     public void testFindOrderbyIDFailed() {
         System.out.println("findOrderbyID");
@@ -256,5 +266,5 @@ public class OrderDAOTest {
         Order result = instance.findOrderbyID(id);
         assertEquals(expResult, result);
     }
-    
+
 }

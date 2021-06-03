@@ -66,11 +66,11 @@ public class OrderDetail {
     }
 
     public String getDongia() {
-        if(dongia == null){
+        if (dongia == null) {
             dongia = "0";
         }
         DecimalFormat formatter = new DecimalFormat("###,###,###");
-        return formatter.format(Double.parseDouble(dongia))+" VNĐ";
+        return formatter.format(Double.parseDouble(dongia)) + " VNĐ";
     }
 
     public void setDongia(String dongia) {

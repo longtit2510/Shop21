@@ -20,10 +20,10 @@ import static org.junit.Assert.*;
  * @author Snowyy
  */
 public class OrderDetailDAOTest {
-    
+
     public OrderDetailDAOTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
         Rollback rb = new Rollback();
@@ -51,16 +51,17 @@ public class OrderDetailDAOTest {
         int oid = 8;
         int pid = 8;
         String pname = "Vans";
-        String dongia = "5000000";
+        String dongia = "5000000.0";
         int quantity = 2;
         OrderDetailDAO instance = new OrderDetailDAO();
         String expResult = "them moi thanh cong";
         String result = instance.createOrderDetail(oid, pid, pname, dongia, quantity);
         OrderDetail ord = instance.findOrderDetailLast();
-        OrderDetail ord1 = new OrderDetail(ord.getId(),oid,pid,pname,dongia,quantity);
+        OrderDetail ord1 = new OrderDetail(ord.getId(), oid, pid, pname, dongia, quantity);
         assertEquals(expResult, result);
-        assertEquals(ord,ord1);
+        assertEquals(ord, ord1);
     }
+
     @Test
     public void testCreateOrderDetailNullOID() {
         OrderDetailDAO instance = new OrderDetailDAO();
@@ -75,8 +76,9 @@ public class OrderDetailDAOTest {
         String result = instance.createOrderDetail(oid, pid, pname, dongia, quantity);
         OrderDetail ord1 = instance.findOrderDetailLast();
         assertEquals(expResult, result);
-        assertEquals(ord,ord1);
+        assertEquals(ord, ord1);
     }
+
     @Test
     public void testCreateOrderDetailNullPID() {
         System.out.println("createOrderDetail");
@@ -91,8 +93,9 @@ public class OrderDetailDAOTest {
         String result = instance.createOrderDetail(oid, pid, pname, dongia, quantity);
         OrderDetail ord1 = instance.findOrderDetailLast();
         assertEquals(expResult, result);
-        assertEquals(ord,ord1);
+        assertEquals(ord, ord1);
     }
+
     @Test
     public void testCreateOrderDetailNullPName() {
         OrderDetailDAO instance = new OrderDetailDAO();
@@ -107,8 +110,9 @@ public class OrderDetailDAOTest {
         String result = instance.createOrderDetail(oid, pid, pname, dongia, quantity);
         OrderDetail ord1 = instance.findOrderDetailLast();
         assertEquals(expResult, result);
-        assertEquals(ord,ord1);
+        assertEquals(ord, ord1);
     }
+
     @Test
     public void testCreateOrderDetailNullDongia() {
         OrderDetailDAO instance = new OrderDetailDAO();
@@ -123,8 +127,9 @@ public class OrderDetailDAOTest {
         String result = instance.createOrderDetail(oid, pid, pname, dongia, quantity);
         OrderDetail ord1 = instance.findOrderDetailLast();
         assertEquals(expResult, result);
-        assertEquals(ord,ord1);
+        assertEquals(ord, ord1);
     }
+
     @Test
     public void testCreateOrderDetailNullQuantity() {
         OrderDetailDAO instance = new OrderDetailDAO();
@@ -139,7 +144,7 @@ public class OrderDetailDAOTest {
         String result = instance.createOrderDetail(oid, pid, pname, dongia, quantity);
         OrderDetail ord1 = instance.findOrderDetailLast();
         assertEquals(expResult, result);
-        assertEquals(ord,ord1);
+        assertEquals(ord, ord1);
     }
 
     @Test
@@ -151,16 +156,17 @@ public class OrderDetailDAOTest {
         int oid = 1;
         int pid = 3;
         String pname = "Converse";
-        String dongia = "500000";
+        String dongia = "500000.0";
         int quantity = 1;
         String expResult = "cap nhat thanh cong";
         String result = instance.updateOrderDetail(id, oid, pid, pname, dongia, quantity);
-        OrderDetail ord1 = new OrderDetail(ord.getId(),oid,pid,pname,dongia,quantity);
+        OrderDetail ord1 = new OrderDetail(ord.getId(), oid, pid, pname, dongia, quantity);
         OrderDetail ord2 = instance.findOrderDetailbyID("1");
         assertEquals(expResult, result);
-        assertNotEquals(ord,ord1);
+        assertNotEquals(ord, ord1);
         assertEquals(ord2, ord1);
     }
+
     @Test
     public void testUpdateOrderDetailNullID() {
         OrderDetailDAO instance = new OrderDetailDAO();
@@ -176,8 +182,9 @@ public class OrderDetailDAOTest {
         String result = instance.updateOrderDetail(id, oid, pid, pname, dongia, quantity);
         List<OrderDetail> lord1 = instance.findOrderDetailbyOID("1");
         assertEquals(expResult, result);
-        assertEquals(lord,lord1);
+        assertEquals(lord, lord1);
     }
+
     @Test
     public void testUpdateOrderDetailNullOID() {
         OrderDetailDAO instance = new OrderDetailDAO();
@@ -193,8 +200,9 @@ public class OrderDetailDAOTest {
         String result = instance.updateOrderDetail(id, oid, pid, pname, dongia, quantity);
         OrderDetail ord1 = instance.findOrderDetailbyID("1");
         assertEquals(expResult, result);
-        assertEquals(ord,ord1);
+        assertEquals(ord, ord1);
     }
+
     @Test
     public void testUpdateOrderDetailNullPID() {
         OrderDetailDAO instance = new OrderDetailDAO();
@@ -210,8 +218,9 @@ public class OrderDetailDAOTest {
         String result = instance.updateOrderDetail(id, oid, pid, pname, dongia, quantity);
         OrderDetail ord1 = instance.findOrderDetailbyID("1");
         assertEquals(expResult, result);
-        assertEquals(ord,ord1);
+        assertEquals(ord, ord1);
     }
+
     @Test
     public void testUpdateOrderDetailNullPName() {
         OrderDetailDAO instance = new OrderDetailDAO();
@@ -227,8 +236,9 @@ public class OrderDetailDAOTest {
         String result = instance.updateOrderDetail(id, oid, pid, pname, dongia, quantity);
         OrderDetail ord1 = instance.findOrderDetailbyID("1");
         assertEquals(expResult, result);
-        assertEquals(ord,ord1);
+        assertEquals(ord, ord1);
     }
+
     @Test
     public void testUpdateOrderDetailNullDongia() {
         OrderDetailDAO instance = new OrderDetailDAO();
@@ -244,8 +254,9 @@ public class OrderDetailDAOTest {
         String result = instance.updateOrderDetail(id, oid, pid, pname, dongia, quantity);
         OrderDetail ord1 = instance.findOrderDetailbyID("1");
         assertEquals(expResult, result);
-        assertEquals(ord,ord1);
+        assertEquals(ord, ord1);
     }
+
     @Test
     public void testUpdateOrderDetailNullQuantity() {
         OrderDetailDAO instance = new OrderDetailDAO();
@@ -261,7 +272,7 @@ public class OrderDetailDAOTest {
         String result = instance.updateOrderDetail(id, oid, pid, pname, dongia, quantity);
         OrderDetail ord1 = instance.findOrderDetailbyID("1");
         assertEquals(expResult, result);
-        assertEquals(ord,ord1);
+        assertEquals(ord, ord1);
     }
 
     @Test
@@ -276,10 +287,11 @@ public class OrderDetailDAOTest {
         int j = instance.getAllOrderDetail().size();
         OrderDetail ord1 = instance.findOrderDetailbyID("1");
         assertEquals(expResult, result);
-        assertEquals(ord,ord1);
-        assertNotEquals(i,j);
+        assertEquals(ord, ord1);
+        assertNotEquals(i, j);
     }
-        @Test
+
+    @Test
     public void testDeleteOrderDetailFailed() {
         System.out.println("deleteOrderDetail");
         String id = "11";
@@ -289,19 +301,19 @@ public class OrderDetailDAOTest {
         String result = instance.deleteOrderDetail(id);
         int j = instance.getAllOrderDetail().size();
         assertEquals(expResult, result);
-        assertEquals(i,j);
+        assertEquals(i, j);
     }
-
 
     @Test
     public void testFindOrderDetailbyIDSuccess() {
         System.out.println("findOrderDetailbyID");
         String id = "1";
         OrderDetailDAO instance = new OrderDetailDAO();
-        OrderDetail expResult = new OrderDetail(1,1,2,"Air Jordan ","3000000.0",2);
+        OrderDetail expResult = new OrderDetail(1, 1, 2, "Air Jordan ", "3000000.0", 2);
         OrderDetail result = instance.findOrderDetailbyID(id);
         assertEquals(expResult, result);
     }
+
     @Test
     public void testFindOrderDetailbyIDFailed() {
         System.out.println("findOrderDetailbyID");
@@ -322,6 +334,7 @@ public class OrderDetailDAOTest {
         List<OrderDetail> result = instance.findOrderDetailbyOID(id);
         assertEquals(expResult, result.size());
     }
+
     @Test
     public void testFindOrderDetailbyOIDFailed() {
         System.out.println("findOrderDetailbyOID");

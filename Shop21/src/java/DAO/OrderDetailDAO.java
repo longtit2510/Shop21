@@ -195,6 +195,7 @@ public class OrderDetailDAO {
         }
         return lorder;
     }
+
     public OrderDetail findOrderDetailLast() {
         OrderDetail result = null;
         String query = "SELECT * FROM OrderDetail WHERE ID = (SELECT MAX(ID) FROM OrderDetail)";

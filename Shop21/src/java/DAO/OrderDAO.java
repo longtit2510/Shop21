@@ -157,6 +157,7 @@ public class OrderDAO {
         }
         return result;
     }
+
     public Order findOrderLast() {
         Order result = null;
         String query = "SELECT * FROM [Order] WHERE ID = (SELECT MAX(ID) FROM [Order])";
@@ -176,6 +177,7 @@ public class OrderDAO {
         }
         return result;
     }
+
     public List<Order> findOrderDetailbyIDCustomer(String id_customer) {
         List<Order> lorder = new ArrayList<Order>();
         String query = "Select  * from [Order]\n"

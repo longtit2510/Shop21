@@ -159,6 +159,7 @@ public class CustomerDAO {
         }
         return result;
     }
+
     public Customer findCustomerLast() {
         Customer result = null;
         String query = "SELECT * FROM Customer WHERE ID = (SELECT MAX(ID) FROM Customer)";

@@ -49,11 +49,11 @@ public class Order {
     }
 
     public String getTotalprice() {
-        if(totalprice == null){
+        if (totalprice == null) {
             totalprice = "0";
         }
         DecimalFormat formatter = new DecimalFormat("###,###,###");
-        return formatter.format(Double.parseDouble(totalprice))+" VNĐ";
+        return formatter.format(Double.parseDouble(totalprice)) + " VNĐ";
     }
 
     public void setTotalprice(String totalprice) {
@@ -79,6 +79,42 @@ public class Order {
     @Override
     public String toString() {
         return "Order{" + "id=" + id + ", id_customer=" + id_customer + ", totalprice=" + totalprice + ", startDate=" + startDate + ", status=" + status + '}';
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Order other = (Order) obj;
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        if (!Objects.equals(this.id_customer, other.id_customer)) {
+            return false;
+        }
+        if (!Objects.equals(this.totalprice, other.totalprice)) {
+            return false;
+        }
+        if (!Objects.equals(this.startDate, other.startDate)) {
+            return false;
+        }
+        if (!Objects.equals(this.status, other.status)) {
+            return false;
+        }
+        return true;
     }
 
 }

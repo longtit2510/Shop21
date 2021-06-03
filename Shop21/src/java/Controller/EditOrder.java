@@ -41,7 +41,7 @@ public class EditOrder extends HttpServlet {
         String startDate = request.getParameter("startDate");
         String status = request.getParameter("status");
         OrderDAO db = new OrderDAO();
-        db.updateorder(idorder,id_customer, totalprice, startDate, status);
+        db.updateorder(idorder, id_customer, totalprice, startDate, status);
         response.sendRedirect("Order");
     }
 

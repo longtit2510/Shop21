@@ -59,7 +59,7 @@
                                     <div class="card-header card-header-primary">
                                         <h4 class="card-title ">DANH SÁCH KHÁCH HÀNG</h4>
                                         <p class="card-category"> </p>
-                                        <button  type="button" rel="tooltip" onclick="openadd()" class="btn btn-primary btn-round">
+                                        <button  id="btnaddcus" type="button" rel="tooltip" onclick="openadd()" class="btn btn-primary btn-round">
                                             THÊM MỚI KHÁCH HÀNG 
                                         </button>
                                     </div>
@@ -104,10 +104,10 @@
                                                         <td><%=e.getAddress()%></td>
                                                         <td><%=e.getCertificate()%></td>
                                                         <td style="text-align: center">
-                                                            <button type="button" rel="tooltip" onclick="openedit('<%=e.getId()%>', '<%=e.getName()%>', '<%=e.getPhone()%>', '<%=e.getAddress()%>', '<%=e.getCertificate()%>')"  class="btn btn-primary btn-round">
+                                                            <button id="btnsua" type="button" rel="tooltip" onclick="openedit('<%=e.getId()%>', '<%=e.getName()%>', '<%=e.getPhone()%>', '<%=e.getAddress()%>', '<%=e.getCertificate()%>')"  class="btn btn-primary btn-round">
                                                                 SỬA
                                                             </button>
-                                                            <button type="button" rel="tooltip" onclick="confirmremove('<%=e.getId()%>')" class="btn btn-primary btn-round">
+                                                            <button id ="btnxoa" type="button" rel="tooltip" onclick="confirmremove('<%=e.getId()%>')" class="btn btn-primary btn-round">
                                                                 XÓA
                                                             </button>
                                                         </td>
@@ -147,7 +147,7 @@
                                                                     <input id="certificate" name="certificate" type="text" class="form-control" required>
                                                                 </div>
                                                             </div>
-                                                            <button type="submit" rel="tooltip"  class="btn btn-primary btn-round">
+                                                            <button id="addbtn2" type="submit" rel="tooltip"  class="btn btn-primary btn-round">
                                                                 Thêm Khách hàng
                                                             </button>
                                                             <button type="button"  rel="tooltip"  class="btn btn-primary btn-round" data-dismiss="modal">
@@ -170,7 +170,7 @@
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <input id="iddelete" name="iddelete" type="text" class="form-control" hidden>
-                                                                <button type="submit" class="btn btn-default" >Xác nhận</button>
+                                                                <button id="btnconfirmxoa" type="submit" class="btn btn-default" >Xác nhận</button>
                                                                 <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
                                                             </div>
                                                         </form>
@@ -208,7 +208,7 @@
                                                                     <input id="certificateedit" name="certificateedit" type="text" class="form-control" required>
                                                                 </div>
                                                             </div>
-                                                            <button type="submit" rel="tooltip"  class="btn btn-primary btn-round">
+                                                            <button id="btnsua2" type="submit" rel="tooltip"  class="btn btn-primary btn-round">
                                                                 Sửa Khách hàng
                                                             </button>
                                                             <button type="button"  rel="tooltip"  class="btn btn-primary btn-round" data-dismiss="modal">
