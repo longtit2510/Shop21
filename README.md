@@ -1,5 +1,5 @@
 ### Hi there 👋
-📫 : longtit2510@gmail.com\n
+📫 : longtit2510@gmail.com
 🔭🔭🔭: Project nhóm cho môn SQA
 <!--
 **longtit2510/longtit2510** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
