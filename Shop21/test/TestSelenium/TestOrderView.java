@@ -46,5 +46,7 @@ public class TestOrderView {
         WebElement btnxemct = wd.findElement(By.id("btnxemct"));
         Thread.sleep(2000);
         btnxemct.click();
+        Thread.sleep(5000);
+        wd.navigate().refresh();
     }
 }
